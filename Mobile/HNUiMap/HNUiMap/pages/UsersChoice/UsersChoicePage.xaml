@@ -1,0 +1,52 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HNUiMap.pages.UsersChoice.UsersChoicePage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source="curvingdesign" Aspect="AspectFill" />
+
+            <ImageButton Grid.Row="0" Source="home2"
+                         Clicked="ImageButton_Clicked"
+                         HorizontalOptions="End" VerticalOptions="Start"
+                         BackgroundColor="Transparent"
+                         Margin="0, 15, 20, 0" />
+
+            <StackLayout Grid.Row="1" Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS">50, 0, 20, 0</On>
+                        <On Platform="Android">20, 0</On>
+                    </OnPlatform>
+                </StackLayout.Padding>
+
+                <Image Source="CharcoDirections" Aspect="AspectFill" WidthRequest="{OnPlatform iOS=350, Android=300}" HorizontalOptions="Center" />
+                <Label Text="WHERE TO?" HorizontalOptions="Center" TextColor="#2A6F63" FontSize="{OnPlatform iOS=24, Android=18}" FontAttributes="Bold" FontFamily="Arial"/>
+                <Button x:Name="btnMap" Text="MAP" TextColor="#F2FFDB" BackgroundColor="#2A6F63" CornerRadius="20"  Clicked="BtnMap_Clicked"
+                        WidthRequest="{OnPlatform iOS=220, Android=220}" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Need help in navigating the campus" TextColor="#0C4568" FontSize="{OnPlatform iOS=14, Android=12}" HorizontalOptions="Center" />
+                    <Label Text="then this is the right direction" TextColor="#0C4568" FontSize="{OnPlatform iOS=14, Android=12}" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <Button x:Name="btnInfo" Text="INFO" TextColor="#F2FFDB" BackgroundColor="#2A6F63" CornerRadius="20"
+                        WidthRequest="{OnPlatform iOS=220, Android=220}" HorizontalOptions="Center" VerticalOptions="Center" Clicked="BtnInfo_Clicked"/>
+
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Take this path to know the school" TextColor="#0C4568" FontSize="{OnPlatform iOS=14, Android=12}" HorizontalOptions="Center"/>
+                    <Label Text="announcements and office schedules" TextColor="#0C4568" FontSize="{OnPlatform iOS=14, Android=12}" HorizontalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Image Grid.Row="2" Source="curvngdesign2" Aspect="AspectFill" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

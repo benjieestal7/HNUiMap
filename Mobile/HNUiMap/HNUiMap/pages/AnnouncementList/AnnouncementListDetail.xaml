@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HNUiMap.pages.Announcement_List.AnnouncementListDetail"
+             Title="CREATE">
+    <StackLayout Padding="10">
+        <ScrollView>
+            <StackLayout Spacing="10" Padding="35" VerticalOptions="Start">
+
+                <Label Text="Title" TextColor="#2A6F63" FontAttributes="Bold" />
+                <Entry x:Name="txtNewTitle" Placeholder="Enter Title" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" />
+
+                <Label Text="Body" TextColor="#2A6F63" FontAttributes="Bold" />
+                <Frame BorderColor="SlateGray">
+                    <Editor x:Name="txtNewBody" Placeholder="Enter Details" PlaceholderColor="SlateGray" TextColor="Black" MaxLength="100" FontAttributes="Italic"
+                    HeightRequest="252" WidthRequest="277" />
+                </Frame>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btnUpload" Text="Upload Picture" TextColor="White" BackgroundColor="#0C4568" CornerRadius="20" WidthRequest="120" HeightRequest="40" HorizontalOptions="Start" Grid.Column="0" />
+
+                    <!-- Other elements in the grid -->
+
+                </Grid>
+
+                    <Button x:Name="btnPublish" Text="Publish" TextColor="White" BackgroundColor="#0C4568" CornerRadius="20" />
+                  
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

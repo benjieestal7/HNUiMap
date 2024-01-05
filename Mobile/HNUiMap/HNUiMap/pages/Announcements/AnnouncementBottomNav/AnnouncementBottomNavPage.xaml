@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                  x:Class="HNUiMap.pages.Announcements.AnnouncementPage"
+                  xmlns:pages2="clr-namespace:HNUiMap.pages.Announcements.MainAnnouncement">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master Page">
+            <!-- Add your master page content here -->
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage Title="Master Page">
+            <!-- Add your master page content here -->
+        </ContentPage>
+        <!--<TabbedPage xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+                android:TabbedPage.ToolbarPlacement="Bottom" BarBackgroundColor="White">
+            <TabbedPage.Children>
+
+                <ContentPage Title="Announcement" IconImageSource="announcement2" >
+                    <ContentView>
+                        <pages2:MainAnnouncementPage />
+                    </ContentView>
+                </ContentPage>
+
+                <ContentPage Title="Home" IconImageSource="home">
+                    --><!-- Tab 2 content --><!--
+                </ContentPage>
+
+                <ContentPage Title="Profile" IconImageSource="profile2">
+                    <ContentView>
+                        <pages1:ProfileMainPage/>
+                    </ContentView>
+                </ContentPage>
+
+            </TabbedPage.Children>
+        </TabbedPage>-->
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>

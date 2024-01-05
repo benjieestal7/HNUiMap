@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HNUiMap"
+             x:Class="HNUiMap.MainPage"
+             BackgroundColor="#03356B" 
+             NavigationPage.HasNavigationBar="False">
+
+    <!--
+        PALETTE
+        Header  :   #0E0E19
+        Body    :   #03356B
+        Button  :   #0E0E19
+        Text    :   #F2E8E9
+    -->
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Padding="50" VerticalOptions="Start">
+            <Label Text="ACCOMPLISHMENT REPORT" HorizontalOptions="Center" TextColor="White" FontSize="Large" FontAttributes="Bold" FontFamily="Arial"/>
+            <Image Source="logo" WidthRequest="{OnPlatform iOS=200, Android=150}" HorizontalOptions="Center" />
+            <Button x:Name="btnMyAccomplishment" Text="My Accomlishments" TextColor="#F2E8E9" BackgroundColor="#0E0E19" CornerRadius="20"/>
+            <Button x:Name="btnNewAccomlishment" Text="New Accomplishment" TextColor="#F2E8E9" BackgroundColor="#0E0E19" CornerRadius="20"/>
+            <Button x:Name="btnEditInfo" Text="Edit Info" TextColor="#F2E8E9" BackgroundColor="#0E0E19" CornerRadius="20"/>
+            <Button x:Name="btnDeleteAccount" Text="Delete Account" TextColor="#F2E8E9" BackgroundColor="#0E0E19" CornerRadius="20"/>
+            <Button x:Name="btnLogout" Text="Logout" TextColor="#F2E8E9" BackgroundColor="#0E0E19" CornerRadius="20"/>
+            <Label Text="NOTE: Deleting, Editing and Printing Accomplishment(s) will done to MyAccomplishents Desktop Application. Thank you."
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontAttributes="Italic"
+                   FontSize="Micro"
+                   TextColor="#F2E8E9"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

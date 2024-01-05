@@ -1,0 +1,50 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HNUiMap.pages.Account.CreateAccountPageDetail"
+             Title="ADD ACCOUNT">
+    <StackLayout>
+        <ScrollView>
+            <StackLayout Spacing="10" Padding="35,5,35,35" VerticalOptions="Start">
+                <Grid HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Frame WidthRequest="200" HeightRequest="170" CornerRadius="75" BackgroundColor="Transparent">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSelectPhotoTapped" />
+                        </Frame.GestureRecognizers>
+
+                        <Image Source="bigprofile" Aspect="AspectFill" BackgroundColor="Transparent"/>
+                    </Frame>
+
+                    <Label Grid.Row="1" Text="Select Photo" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,10,0,0" />
+                </Grid>
+
+                <Label Text="Name" TextColor="#2A6F63" FontAttributes="Bold" />
+                <Entry x:Name="txtNewName" Placeholder="Enter Name" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" />
+
+                <Label Text="E-mail" TextColor="#2A6F63" FontAttributes="Bold"/>
+                <Entry x:Name="txtNewEmail" Placeholder="Enter Email" PlaceholderColor="SlateGray" IsPassword="False" TextColor="Black" MaxLength="100" FontAttributes="Italic"/>
+
+                <Label Text="Username" TextColor="#2A6F63" FontAttributes="Bold"/>
+                <Entry x:Name="txtNewUsername" Placeholder="Enter Username" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic"/>
+
+                <Label Text="Password" TextColor="#2A6F63" FontAttributes="Bold"/>
+                <Entry x:Name="txtNewPassword" Placeholder="Enter Password" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="True" MaxLength="100" FontAttributes="Italic"/>
+
+                <Label Text="Confirm Password" TextColor="#2A6F63" FontAttributes="Bold"/>
+                <Entry x:Name="txtConfirmPassword" Placeholder="Confirm Password" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="True" MaxLength="100" FontAttributes="Italic" />
+
+                <Button x:Name="btnSave" Text="Create Account" TextColor="White" BackgroundColor="#0C4568" CornerRadius="20" WidthRequest="{OnPlatform iOS=250, Android=250}" HorizontalOptions="Center" />
+
+                <Label Text="NOTE: Application will restart after saving the new password."
+                       HorizontalOptions="Center" 
+                       TextColor="White"  
+                       FontSize="Micro" 
+                       FontAttributes="Italic"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

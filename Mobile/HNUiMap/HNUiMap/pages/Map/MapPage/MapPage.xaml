@@ -1,0 +1,18 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HNUiMap.pages.Map.MapPage">
+    
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="HNU CAMPUS" TextColor="White" FontSize="20" FontAttributes="Bold"
+                   HorizontalOptions="Start" VerticalOptions="Center" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <WebView Source="{Binding WebsiteSource}" x:Name="mapWebView"
+                     VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HNUiMap.pages.Profile.EditProfile.EditProfilePage"
+             xmlns:pages="clr-namespace:HNUiMap.pages.Profile.EditProfile"
+             NavigationPage.HasNavigationBar="False">
+  <MasterDetailPage.Master>
+    <pages:EditProfilePageFlyout x:Name="FlyoutPage" />
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:EditProfilePageDetail />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

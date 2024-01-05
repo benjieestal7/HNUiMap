@@ -1,0 +1,52 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HNUiMap.pages.AppStartUp.LandingPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Padding="10" Orientation="Horizontal" HorizontalOptions="End">
+                <Button x:Name="btnNxtLogin" Text="Login" TextColor="#0C4568" BackgroundColor="White" CornerRadius="20" 
+                        BorderColor="#0C4568" BorderWidth="1" WidthRequest="{OnPlatform iOS=70, Android=70}" 
+                        HorizontalOptions="End" VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Spacing="20" Padding="50" VerticalOptions="CenterAndExpand">
+                <Label Text="WELCOME!" HorizontalOptions="Center" TextColor="#2A6F63" FontSize="{OnPlatform iOS=40, Android=30}" FontAttributes="Bold" FontFamily="Arial"/>
+                <Image Source="logo" HorizontalOptions="Center" Aspect="AspectFit">
+                    <Image.WidthRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="iOS">350</On>
+                            <On Platform="Android">300</On>
+                        </OnPlatform>
+                    </Image.WidthRequest>
+                </Image>
+
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Holy Name University" TextColor="#0C4568" FontSize="{OnPlatform iOS=Micro, Android=Small}" HorizontalOptions="Center" />
+                    <Label Text="interactive campus map" TextColor="#0C4568" FontSize="{OnPlatform iOS=Micro, Android=Small}" />
+                </StackLayout>
+            </StackLayout>
+
+            <Grid Grid.Row="2" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <BoxView BackgroundColor="#2A6F63" CornerRadius="50,50,0,0" />
+                <Button Text="NEXT >" TextColor="Black" BackgroundColor="White" CornerRadius="20"  BorderColor="Black"
+                        WidthRequest="{OnPlatform iOS=250, Android=250}" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Button_Clicked"/>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

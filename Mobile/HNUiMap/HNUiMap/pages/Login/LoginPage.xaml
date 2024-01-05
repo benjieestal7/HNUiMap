@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="HNUiMap.pages.LoginPage"
+             BackgroundColor="#A5D353" 
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="50" VerticalOptions="Start"  d:VerticalOptions="Center">
+            <Label Text="HNU IMAP" HorizontalOptions="Center" TextColor="#0C4568" FontSize="Large" FontAttributes="Bold" FontFamily="Arial"/>
+            <Image Source="logo" WidthRequest="{OnPlatform iOS=300, Android=250}" HorizontalOptions="Center" />
+            <Entry x:Name="txtUsername" Placeholder="Username" PlaceholderColor="#0C4568" TextColor="Black" MaxLength="20" />
+            <Entry x:Name="txtPassword" Placeholder="Password" PlaceholderColor="#0C4568" TextColor="Black" IsPassword="True" MaxLength="20"/>
+            <Button x:Name="btnLogin" Text="Login" TextColor="#F2E8E9" BackgroundColor="#0C4568" CornerRadius="20"/>
+            <Button x:Name="btnRegister" Text="Register" TextColor="#F2E8E9" BackgroundColor="#0C4568" CornerRadius="20"/>
+
+            <Label Text="version 1 - beta" HorizontalOptions="Center" TextColor="White" FontSize="Micro" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,5 @@
+Will start developing on this folder
+1. Open the folder name: Server; on the address tab, type cmd; it will enter you into the command prompt
+2. Type "npm run dev" to run the server
+3. Open Postman to test the api. 
+4. Test

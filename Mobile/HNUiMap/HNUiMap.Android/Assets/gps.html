@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Tutorial</title>
+
+    <!-- leaflet css  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+          integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin="" />
+    <!-- routing css  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <!-- icon css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <!-- gps css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.74.0/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.4/dist/L.Control.Locate.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class="coordinate"></div>
+</body>
+</html>
+
+<!-- leaflet js  -->
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+        crossorigin=""></script>
+<!-- routing js  -->
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<!-- gps js  -->
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+<!-- map coordinate js  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+    // Map initialization
+    var map = L.map('map').setView([9.650015480290747, 123.86752658139376], 20)
+        .setMaxBounds([[9.64755, 123.86502], [9.65262, 123.87080]]);
+
+    //osm layer
+    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        , maxZoom: 25
+    });
+    osm.addTo(map);
+
+    //image overlay
+    var samplemap;
+    samplemap = L.imageOverlay('mappcampus.png', [[9.64755, 123.86502], [9.65241, 123.86984]],
+        { opacity: 1 }).addTo(map);
+
+
+    //marker
+    var bank = L.latLng([9.65122, 123.86690]);
+    L.marker(bank).bindPopup('atm').addTo(map);
+    var lounge = L.latLng([9.649642969417464, 123.86834489670859]);
+    L.marker(lounge).bindPopup('botanical garden').addTo(map);
+    var chapel = L.latLng([9.649193167861025, 123.86690877845162]);
+    L.marker(chapel).bindPopup('chapel').addTo(map);
+    var emcelementary = L.latLng([9.648185317557143, 123.8677028931138]);
+    L.marker(emcelementary).bindPopup('emcelementary').addTo(map);
+    var blueroof = L.latLng([9.648490255214972, 123.86730803332959]);
+    L.marker(blueroof).bindPopup('blueroof').addTo(map);
+
+    //gps plugin
+    L.control.locate().addTo(map);
+
+    //save gps coordinates
+    var savedLatLng;
+    map.on('locationfound', function (evt) {
+        savedLatLng = evt.latlng;
+    });
+
+    //route
+    map.on('click', function (e) {
+        console.log(e)
+        var newMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+        L.Routing.control({
+            waypoints: [
+                L.latLng(savedLatLng),
+                L.latLng(e.latlng.lat, e.latlng.lng)
+            ]
+        }).addTo(map);
+    });
+
+    // Map coordinate display
+    map.on('mousemove', function (e) {
+        console.log(e)
+        $('.coordinate').html(`Lat: ${e.latlng.lat} Lng: ${e.latlng.lng}`)
+    })
+</script>

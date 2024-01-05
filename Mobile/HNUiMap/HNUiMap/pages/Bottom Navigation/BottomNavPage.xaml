@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:account="clr-namespace:HNUiMap.pages.Account" 
+            xmlns:pages2="clr-namespace:HNUiMap.pages.Announcements.MainAnnouncement" x:DataType="account:CreateAccountPage"
+            x:Class="HNUiMap.pages.Bottom_Navigation.BottomNavPage">
+    
+    <TabbedPage xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+                android:TabbedPage.ToolbarPlacement="Bottom" BarBackgroundColor="White">
+        <TabbedPage.Children>
+            <!-- Your TabbedPages go here -->
+            <ContentPage Title="Announcement" IconImageSource="announcement2" >
+                <!-- Tab 2 content -->
+            </ContentPage>
+            <ContentPage Title="Home" IconImageSource="home">
+                <!-- Tab 2 content -->
+            </ContentPage>
+            <ContentPage Title="Profile" IconImageSource="profile2">
+                <!-- Tab 3 content -->
+            </ContentPage>
+        </TabbedPage.Children>
+        
+    </TabbedPage>
+</TabbedPage> 
