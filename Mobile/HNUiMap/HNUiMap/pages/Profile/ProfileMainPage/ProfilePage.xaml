@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="HNUiMap.pages.Profile.ProfilePage"
+                 xmlns:profile="clr-namespace:HNUiMap.pages.Profile"
+                 xmlns:pages1="clr-namespace:HNUiMap.pages.Drawer"
+                 x:DataType="profile:ProfilePage">
+
+    <MasterDetailPage.Master>
+        <pages1:DrawerPageFlyout x:Name="FlyoutPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <StackLayout Spacing="10" Padding="10" VerticalOptions="Start">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Frame WidthRequest="200" HeightRequest="150" CornerRadius="75" HorizontalOptions="Center" BackgroundColor="Transparent" >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSelectPhotoTapped" />
+                        </Frame.GestureRecognizers>
+
+                        <Image Source="bigprofile" Aspect="AspectFill" BackgroundColor="White" />
+                    </Frame>
+
+                    <StackLayout Grid.Row="2" Margin="0,-20,0,0">
+                        <Label Grid.Row="1" Text="Elloisa Jim Rollorata" TextColor="#2A6F63" FontSize="20" FontAttributes="600" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,10,0,0" />
+                    </StackLayout>
+                </Grid>
+
+                <Grid HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Source="settings" Aspect="AspectFit" BackgroundColor="Transparent" WidthRequest="15" HeightRequest="15" />
+                    <Label Grid.Column="1" Text="Edit Profile" TextColor="#0C4568" FontSize="15" FontAttributes="600" Margin="-3,0,0,0" BackgroundColor="Transparent">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnEditProfileTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                    <Label Text="List of Admin Accounts" HorizontalOptions="Center" TextColor="#2A6F63" FontSize="20" FontAttributes="600" FontFamily="Arial" />
+                </StackLayout>
+                <ScrollView Grid.Row="2" HorizontalOptions="Center" HeightRequest="200">
+                    <ScrollView.Content>
+                        <StackLayout BackgroundColor="Transparent" WidthRequest="270" 
+                                     HorizontalOptions="Center" VerticalOptions="Start" Margin="5,90,0,0" >
+                            <ListView ItemsSource="{Binding ProfileData}" BackgroundColor="Transparent">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Label Text="{Binding}" HorizontalOptions="Start" VerticalOptions="Center" FontSize="20" TextColor="#0C4568" />
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </ScrollView.Content>
+                </ScrollView>
+                
+                <StackLayout HorizontalOptions="Center" Margin="0,20,0,0">
+                    <Button x:Name="btnCreateAdmin" Text="Create Admin" TextColor="White" BackgroundColor="#0C4568" CornerRadius="20" WidthRequest="{OnPlatform iOS=250, Android=250}" Clicked="BtnCreateAdmin_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+ </MasterDetailPage>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="HNUiMap.pages.ScheduleList.ScheduleListPage">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="CREATE" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <StackLayout Padding="10">
+        <ScrollView>
+            <StackLayout Spacing="10" Padding="35" VerticalOptions="Start">
+
+                <Label Text="Office" TextColor="#2A6F63" FontAttributes="Bold" />
+                <Entry x:Name="txtNewOffice" Placeholder="Enter Title" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" />
+
+                <Label Text="Transactions and Details" TextColor="#2A6F63" FontAttributes="Bold" />
+                <Frame BorderColor="SlateGray">
+                    <Editor x:Name="txtNewTransacDet" Placeholder="Enter Details" PlaceholderColor="SlateGray" TextColor="Black" MaxLength="100" FontAttributes="Italic"
+                    HeightRequest="252" WidthRequest="277" />
+                </Frame>
+
+                <Label Text="Schedule" TextColor="#2A6F63" FontAttributes="Bold" />
+
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Weekdays:" TextColor="Black" FontAttributes="Bold" />
+                        <Entry x:Name="txtNewWeekdays" Placeholder="Monday-Friday" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" FontSize="18"
+                         Margin="0,-15,0,0" />
+                    </StackLayout>
+                </StackLayout>
+
+                <Label Text="Morning Schedule" TextColor="#2A6F63" FontAttributes="300" d:FontAttributes="Italic"/>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Opens:" TextColor="Black" FontAttributes="Bold" />
+                        <Entry x:Name="txtNewOpens" Placeholder="[hh]:[mm]:[ss]" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" FontSize="18"
+                         Margin="0,-15,0,0" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Close:" TextColor="Black" FontAttributes="Bold" />
+                        <Entry x:Name="txtNewClose" Placeholder="[hh]:[mm]:[ss]" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" FontSize="18"
+                         Margin="0,-15,0,0" />
+                    </StackLayout>
+                </StackLayout>
+
+                <Label Text="Afternoon Schedule" TextColor="#2A6F63" FontAttributes="300" d:FontAttributes="Italic"/>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Opens:" TextColor="Black" FontAttributes="Bold" />
+                        <Entry x:Name="txtNewOpens1" Placeholder="[hh]:[mm]:[ss]" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" FontSize="18"
+                         Margin="0,-15,0,0" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Close:" TextColor="Black" FontAttributes="Bold" />
+                        <Entry x:Name="txtNewClose1" Placeholder="[hh]:[mm]:[ss]" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" FontSize="18"
+                         Margin="0,-15,0,0" />
+                    </StackLayout>
+                </StackLayout>
+                
+
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Weekends:" TextColor="Black" FontAttributes="Bold" />
+                        <Entry x:Name="txtNewWeekends" Placeholder="Saturday" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" FontSize="18"
+                         Margin="0,-15,0,0" />
+                    </StackLayout>
+                </StackLayout>
+                <Label Text="Morning Schedule" TextColor="#2A6F63" FontAttributes="300" d:FontAttributes="Italic"/>
+                <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Opens:" TextColor="Black" FontAttributes="Bold" />
+                            <Entry x:Name="txtNewOpens2" Placeholder="[hh]:[mm]:[ss]" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" FontSize="18"
+                         Margin="0,-15,0,0" />
+                        </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Close:" TextColor="Black" FontAttributes="Bold" />
+                        <Entry x:Name="txtNewClose2" Placeholder="[hh]:[mm]:[ss]" PlaceholderColor="SlateGray" TextColor="Black" IsPassword="False" MaxLength="100" FontAttributes="Italic" FontSize="18"
+                         Margin="0,-15,0,0" />
+                    </StackLayout>
+                </StackLayout>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+
+                <Button x:Name="btnCreateSched" Text="Create Schedule" TextColor="White" BackgroundColor="#0C4568" CornerRadius="20" />
+
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>

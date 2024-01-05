@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:HNUiMap.pages.Feedback"
+             x:Class="HNUiMap.pages.Feedback.FeedbackPage"
+             BackgroundColor="#A5D353" 
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Grid.Row="1" Spacing="20" Padding="50" VerticalOptions="CenterAndExpand">
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="WE'D LOVE TO KNOW" HorizontalOptions="Center" TextColor="#0C4568" FontSize="{OnPlatform iOS=25, Android=25}" FontAttributes="Bold" FontFamily="Arial"/>
+                <Label Text="YOUR EXPERIENCE" HorizontalOptions="Center" TextColor="#0C4568" FontSize="{OnPlatform iOS=25, Android=25}" FontAttributes="Bold" FontFamily="Arial"/>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Your reviews keep our team " TextColor="#0C4568" FontSize="{OnPlatform iOS=Micro, Android=Small}" HorizontalOptions="Center" />
+                <Label Text="motivated to make HNU iMap better" TextColor="#0C4568" FontSize="{OnPlatform iOS=Micro, Android=Small}" />
+            </StackLayout>
+
+            <!-- Center the BoxView and RatingScale -->
+            <StackLayout HorizontalOptions="Center">
+                <Grid VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Center the BoxView -->
+                    <BoxView BackgroundColor="#0C4568" CornerRadius="10,10,10,10" HeightRequest="70" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=200, Android=200}" />
+
+                    <!-- Center the RatingScale by placing it in a centered StackLayout -->
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <local:RatingScale RatingSelected="StarRating_RatingSelected" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+            <Button x:Name="btnRate" Text="RATE" TextColor="#0C4568" BackgroundColor="#F1C644" CornerRadius="20"  Clicked="ShowPopupButton_Clicked"
+                    WidthRequest="{OnPlatform iOS=90, Android=90}" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,83 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HNUiMap.pages.Map.MapLayout.MapLayout">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source="topbarbg" Aspect="AspectFill" />
+
+            <Grid Grid.Row="0" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Grid.Column="0"
+                             Source="backbutton"
+                             Clicked="BackButton_Clicked"
+                             HorizontalOptions="Start"
+                             VerticalOptions="Center"
+                             BackgroundColor="White"
+                             CornerRadius="75"
+                             Margin="10, 0, 10, 0"/>
+
+                <Label Grid.Column="1"
+                       Text="HNU CAMPUS"
+                       TextColor="#2A6F63"
+                       FontSize="{OnPlatform iOS=20, Android=18}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" 
+                       Margin="30, 0, 0, 0"/>
+
+                <ImageButton Grid.Column="2"
+                             Source="dropdown"
+                             Clicked="ImageButton_Clicked"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center"
+                             BackgroundColor="White"
+                             Margin="0, 0, 80, 0" />
+            </Grid>
+
+            <StackLayout Grid.Row="1" Spacing="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="filtersearch" WidthRequest="24" HeightRequest="24" Margin="10,0"/>
+
+                    <Entry Grid.Column="1"
+                           Placeholder="Search here"
+                           HorizontalOptions="FillAndExpand" />
+                </Grid>
+
+                <WebView x:Name="mapWebView"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <Image Grid.Row="2" Source="whitebacg" Aspect="AspectFill" Margin="0,0,0,20"/>
+            <StackLayout Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center" Padding="0,0,0,5">
+                <FlexLayout JustifyContent="Center" AlignItems="Center">
+                    <Frame WidthRequest="45" HeightRequest="30" CornerRadius="75" BackgroundColor="White" BorderColor="#2A6F63">
+                        <ImageButton Source="locationpoint" Aspect="AspectFit" BackgroundColor="White"  CornerRadius="75" WidthRequest="45" HeightRequest="30" Clicked="LocationButton_Clicked" />
+                    </Frame>
+                    <Frame WidthRequest="45" HeightRequest="30" CornerRadius="75" BackgroundColor="White" Margin="30,0" BorderColor="#2A6F63">
+                        <ImageButton Source="compas" Aspect="AspectFit" BackgroundColor="White"  CornerRadius="75" WidthRequest="45" HeightRequest="30" Clicked="ImageButton_Clicked" />
+                    </Frame>
+                    <Frame WidthRequest="45" HeightRequest="30" CornerRadius="75" BackgroundColor="White" BorderColor="#2A6F63">
+                        <ImageButton Source="pov" Aspect="AspectFit" BackgroundColor="White" CornerRadius="75" WidthRequest="45" HeightRequest="30" Clicked="POVButton_Clicked" />
+                    </Frame>
+                </FlexLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

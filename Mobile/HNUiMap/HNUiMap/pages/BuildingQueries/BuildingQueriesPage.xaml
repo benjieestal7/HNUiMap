@@ -1,0 +1,54 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HNUiMap.pages.Locations.LocationsPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
+                <Button x:Name="btnenrollment" Text="On-Campus Enrollment" TextColor="#F2FFDB" BackgroundColor="#2A6F63" CornerRadius="20" Clicked="BtnEnrollment_Clicked"/>
+
+                <CollectionView x:Name="enrollmentCollectionView" ItemsSource="{Binding EnrollmentItems}" SelectionChanged="EnrollmentCollectionView_SelectionChanged"
+                                IsVisible="False" Margin="10,0,10,0" HeightRequest="{Binding EnrollmentCollectionViewHeight}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Button Text="{Binding .}" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ItemButton_Clicked" FontSize="Small" TextColor="#0C4568" BackgroundColor="#F2FFDB"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button x:Name="btnbillings" Text="Payment of tuition and other school billings" TextColor="#F2FFDB" BackgroundColor="#2A6F63" CornerRadius="20" Clicked="BtnBillings_Clicked"/>
+
+                <CollectionView x:Name="billingsCollectionView" ItemsSource="{Binding BillingsItems}" SelectionChanged="BillingsCollectionView_SelectionChanged"
+                                IsVisible="False" Margin="10,0,10,0" HeightRequest="{Binding BillingsCollectionViewHeight}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Button Text="{Binding .}" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ItemButton_Clicked" FontSize="Small" TextColor="#0C4568" BackgroundColor="#F2FFDB"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button x:Name="btnsupplies" Text="Purchase of souvenir items, and school supplies" TextColor="#F2FFDB" BackgroundColor="#2A6F63" CornerRadius="20" Clicked="BtnSupplies_Clicked"/>
+
+                <CollectionView x:Name="suppliesCollectionView" ItemsSource="{Binding SuppliesItems}" SelectionChanged="SuppliesCollectionView_SelectionChanged"
+                                IsVisible="False" Margin="10,0,10,0" HeightRequest="{Binding SuppliesCollectionViewHeight}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Button Text="{Binding .}" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ItemButton_Clicked" FontSize="Small" TextColor="#0C4568" BackgroundColor="#F2FFDB"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button x:Name="btnrecords" Text="Request for School Records" TextColor="#F2FFDB" BackgroundColor="#2A6F63" CornerRadius="20" Clicked="BtnRecords_Clicked"/>
+
+                <CollectionView x:Name="recordsCollectionView" ItemsSource="{Binding RecordsItems}" SelectionChanged="RecordsCollectionView_SelectionChanged"
+                                IsVisible="False" Margin="10,0,10,0" HeightRequest="{Binding RecordsCollectionViewHeight}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Button Text="{Binding .}" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ItemButton_Clicked" FontSize="Small" BackgroundColor="#F2FFDB" TextColor="#0C4568"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

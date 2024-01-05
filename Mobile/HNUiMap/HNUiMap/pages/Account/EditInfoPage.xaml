@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HNUiMap.pages.EditInfoPage"
+             BackgroundColor="#03356B">
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Padding="30" VerticalOptions="Start">
+            <Label Text="EDIT INFO" HorizontalOptions="Center" TextColor="White" FontSize="Large" FontAttributes="Bold" FontFamily="Arial"/>
+            <Entry x:Name="txtNewUsername" Placeholder="New ID Number" PlaceholderColor="SlateGray" TextColor="White" IsPassword="False" MaxLength="100"  Keyboard="Numeric"/>
+            <Entry x:Name="txtNewFullname" Placeholder="New Fullname" PlaceholderColor="SlateGray" IsPassword="False" TextColor="White" MaxLength="100"/>
+            <Entry x:Name="txtNewDesignation" Placeholder="New Designation" PlaceholderColor="SlateGray" TextColor="White" IsPassword="False" MaxLength="100"/>
+            <Entry x:Name="txtNewDivision" Placeholder="New Division" PlaceholderColor="SlateGray" TextColor="White" IsPassword="False" MaxLength="100"/>
+            <Entry x:Name="txtCurrentPassword" Placeholder="Current Password" PlaceholderColor="SlateGray" TextColor="White" IsPassword="True" MaxLength="100"/>
+            <Entry x:Name="txtNewPassword" Placeholder="New Password" PlaceholderColor="SlateGray" TextColor="White" IsPassword="True" MaxLength="100"/>
+            <Entry x:Name="txtConfirmPassword" Placeholder="Confirm Password" PlaceholderColor="SlateGray" TextColor="White" IsPassword="True" MaxLength="100"/>
+            <Button x:Name="btnSave" Text="Save" TextColor="#F2E8E9" BackgroundColor="#0E0E19" CornerRadius="20"/>
+            <Label Text="NOTE: Application will restart after saving the new password."
+                   HorizontalOptions="Center" 
+                   TextColor="White" 
+                   FontSize="Micro" 
+                   FontAttributes="Italic"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
